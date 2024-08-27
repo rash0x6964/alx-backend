@@ -58,8 +58,7 @@ def get_user() -> Union[Dict, None]:
 
 @app.before_request
 def before_request() -> None:
-    """Performs some routines before each request's resolution.
-    """
+    """ Middleware """
 
     g.user = get_user()
 
@@ -67,7 +66,7 @@ def before_request() -> None:
 @app.route('/')
 def index() -> str:
     """ Default route """
-    return render_template("5-index.html")
+    return render_template("6-index.html")
 
 
 if __name__ == "__main__":
